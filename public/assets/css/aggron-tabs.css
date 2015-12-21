@@ -10,6 +10,9 @@
   font-weight: bold;
   text-transform: uppercase; }
 
+.tabs a.active {
+  color: #1d1d1d; }
+
 .tabs-content {
   background: #FFFFFF;
   position: relative;
