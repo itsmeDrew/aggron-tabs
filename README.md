@@ -1,4 +1,5 @@
 # Aggron Tabs
+#####A simple jQuery tab animation
 ######WIP
 
 ###Usage
@@ -30,3 +31,9 @@
   </div>
 </div>
 ```
+
+###Options
+######Defaults to fade
+
+* Fade `$('.js-tab-selector').aggronTabs({effect: 'fade'});`
+* Scale `$('.js-tab-selector').aggronTabs({effect: 'scale'});`
