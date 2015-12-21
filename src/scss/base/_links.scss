@@ -1,0 +1,8 @@
+a {
+  color: $base-link__color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darken($base-link__color, 5%);
+}

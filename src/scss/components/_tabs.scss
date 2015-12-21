@@ -1,0 +1,37 @@
+@import '../core/colors';
+
+.tabs ul {
+  padding: 2rem 0;
+}
+
+.tabs ul li {
+  display: inline-block;
+  margin-right: 2.5rem;
+}
+
+.tabs ul li a {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tabs-content {
+  background: $white;
+  position: relative;
+  padding: 1rem;
+}
+
+.tabs-content > div {
+  position: absolute;
+  opacity: 0;
+  top: -10px;
+  left: 20px;
+  transition: opacity 0.3s, top 1s;
+  -moz-transition: opacity 0.3s, top 1s;
+  -webkit-transition: opacity 0.3s, top 1s;
+}
+
+.tabs-content > div.active {
+  opacity: 1;
+  top: 20px;
+}

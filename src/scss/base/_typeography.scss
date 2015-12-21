@@ -1,0 +1,60 @@
+h1 {
+  font-family: $font-family--sans-serif;
+  letter-spacing: .15rem;
+  color: $black;
+
+  @include breakpointLargerThan($breakpoint--medium) {
+    @include font-size(70px);
+  }
+
+  @include breakpointBetween($breakpoint--small, $breakpoint--medium) {
+    @include font-size(50px);
+  }
+
+  @include breakpointSmallerThan($breakpoint--small) {
+    @include font-size(40px);
+  }
+}
+
+h2 {
+  @include font-size(32px);
+
+  font-family: $font-family--sans-serif;
+  font-weight: bold;
+  color: $tundora;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+h3 {
+  @include font-size($base-font-size + 2);
+
+  font-family: $font-family--sans-serif;
+  font-weight: bold;
+  color: $black;
+  line-height: 1.5;
+}
+
+h4 {
+  @include font-size($base-font-size);
+
+  font-family: $font-family--sans-serif;
+  color: $red;
+  line-height: 1.5;
+}
+
+h5 {
+  @include font-size($base-font-size - 2);
+  font-family: $font-family--sans-serif;
+  color: $tundora;
+  line-height: 1.5;
+}
+
+p {
+  @include font-size($base-font-size);
+
+  font-family: $font-family--sans-serif;
+  color: $black;
+  line-height: 1.5;
+  margin-bottom: .625rem;
+}

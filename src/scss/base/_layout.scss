@@ -1,0 +1,16 @@
+body {
+  font-family: $font-family--sans-serif;
+  background: #f1f1f1;
+}
+
+.clearfix::after,
+.clearfix::before {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+}

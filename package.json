@@ -1,0 +1,25 @@
+{
+  "name": "agron-tabs",
+  "version": "1.0.1",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-angular-templatecache": "^1.6.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-jshint": "^1.11.0",
+    "gulp-ng-annotate": "^1.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-util": "^3.0.5",
+    "requirejs": "^2.1.18",
+    "yargs": "^3.11.0"
+  }
+}

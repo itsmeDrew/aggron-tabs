@@ -1,0 +1,130 @@
+///////////////////////////////
+/// BREAKPOINT HELPERS
+///////////////////////////////
+
+@mixin breakpoint($breakpoint, $type: 'max') {
+  @media (#{$type}-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin breakpointBetween($fromBreakpoint, $toBreakpoint) {
+  @media (min-width: $fromBreakpoint) and (max-width: $toBreakpoint - 1) {
+    @content;
+  }
+}
+
+@mixin breakpointSmallerThan($breakpoint) {
+  @include breakpoint($breakpoint - 1, 'max') {
+    @content;
+  }
+}
+
+@mixin breakpointLargerThan($breakpoint) {
+  @include breakpoint($breakpoint, 'min') {
+    @content;
+  }
+}
+
+///////////////////////////////
+/// FONT HELPERS
+///////////////////////////////
+
+@mixin font-face($style-name, $file, $family, $weight, $category:"") {
+    $filepath: "../fonts/" + $family + "/" + $file;
+    @font-face {
+        font-family: "#{$style-name}";
+        src: url($filepath + ".otf");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".otf")  format('truetype'), url($filepath + ".svg#" + $style-name + "") format('svg');
+        font-weight: $weight;
+    }
+    %#{$style-name} {
+        font: {
+            @if $category != "" {
+                family: "#{$style-name}", #{$category};
+            }
+            @else {
+                family: "#{$style-name}";
+                weight: normal;
+            }
+        }
+    }
+}
+
+///////////////////////////////
+/// FONT SIZE HELPERS
+///////////////////////////////
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+///////////////////////////////
+/// ANIMATION HELPERS
+///////////////////////////////
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+///////////////////////////////
+/// CENTERING HELPERS
+///////////////////////////////
+
+@mixin centerHorizontal() {
+  top: 50%;
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+@mixin centerVertical() {
+  left: 50%;
+  transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
+///////////////////////////////
+/// SECTION BREAK
+///////////////////////////////
+
+@mixin sectionTriangle($size, $color) {
+  display: block;
+  content: "";
+  bottom: -$size;
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+  z-index: 5;
+}
