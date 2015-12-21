@@ -65,7 +65,7 @@ gulp.task('build:js', [ 'clean:js' ], function(cb) {
   });
 });
 
-gulp.task('copy:js:tabs', function(cb) {
+gulp.task('copy:js:tabs', ['build:js'], function(cb) {
   return gulp.src('./src/js/aggron-tabs.js')
     .pipe(gulp.dest('./public/assets/js'));
 });
