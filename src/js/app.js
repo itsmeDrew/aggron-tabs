@@ -10,7 +10,7 @@
       init();
 
       function init() {
-        $('#tabs').aggronTabs();
+        $('.js-tabs').aggronTabs();
       }
 
     }
