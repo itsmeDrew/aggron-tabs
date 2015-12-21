@@ -28,11 +28,6 @@ gulp.task('copy:fonts', function() {
     .pipe(gulp.dest('./public/assets/fonts'));
 });
 
-gulp.task('copy:slick-fonts', function() {
-  return gulp.src('./bower_components/slick-carousel/slick/fonts/**/*')
-    .pipe(gulp.dest('./public/assets/fonts'));
-});
-
 gulp.task('copy:images', [ 'clean:images' ], function() {
   return gulp.src('./src/img/**/*')
     .pipe(gulp.dest('./public/assets/img'));
@@ -68,6 +63,11 @@ gulp.task('build:js', [ 'clean:js' ], function(cb) {
           .on('finish', cb);
     }
   });
+});
+
+gulp.task('copy:js:tabs', function(cb) {
+  return gulp.src('./src/js/aggron-tabs.js')
+    .pipe(gulp.dest('./public/assets/js'));
 });
 
 gulp.task('copy:views', [ 'clean:views' ], function() {
@@ -115,7 +115,7 @@ gulp.task('watch', function() {
 })
 
 gulp.task('build', function(cb) {
-  gulp.start([ 'build:js', 'build:css', 'copy:views', 'copy:fonts', 'copy:slick-fonts', 'copy:images'], cb);
+  gulp.start([ 'build:js', 'build:css', 'copy:views', 'copy:fonts', 'copy:images', 'copy:js:tabs'], cb);
 });
 
 gulp.task('default', [ 'build' ], function() {
